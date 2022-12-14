@@ -9,10 +9,33 @@ _createMemes()
 function getMeme() {
     return gMeme
 }
-function setLineTxt(){
+function setLineTxt() {
 
 }
 
+function setLineTxt(txt) {
+    // console.log(gMeme.lines)
+    var length = gMeme.lines.length
+    gMeme.lines.push(_createLine(txt, 100))
+    // console.log(gMeme.lines)
+}
+function getLastLine(){
+    var length = gMeme.lines.length
+    // console.log(length)
+    return gMeme.lines[length-1]
+}
+
+function _createLine(txt, x) {
+    var line = {
+        txt,
+        size : 50,
+        align : 'center',
+        color : 'black',
+        x,
+        y : 150
+    }
+    return line
+}
 function _createMemes() {
     gMeme = {
         selectedImgId: 5,
@@ -22,9 +45,9 @@ function _createMemes() {
                 txt: 'sometimes',
                 size: 50,
                 align: 'left',
-                color: 'white',
-                x:100,
-                y:50
+                color: 'black',
+                x: 100,
+                y: 50
             }
         ]
     }

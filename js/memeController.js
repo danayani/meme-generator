@@ -5,9 +5,8 @@ var gCtx
 function initMeme() {
     gElCanvas = document.getElementById('my-canvas')
     gCtx = gElCanvas.getContext('2d')
-    console.log(gCtx);
-    resizeCanvas()
 
+    resizeCanvas()
     //go togther, first bc img and then the other elements
     drawImg('img/1.jpg')
     renderMeme()
@@ -15,7 +14,6 @@ function initMeme() {
 
 function renderMeme() {
     var currMeme = getMeme()
-    console.log(currMeme.lines[0].txt)
 
     drawText(currMeme.lines[0])
 }
@@ -30,12 +28,12 @@ function drawImg(srcImg) {
     }
 
 }
+
 function drawText(currMeme) {
     var { txt, size, align, color, x, y } = currMeme
-    console.log(txt)
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'white'
-    gCtx.fillStyle = 'color'
+    gCtx.fillStyle = color
     gCtx.font = `${size}px arial`
     gCtx.textAlign = align
     gCtx.textBaseline = 'middle'

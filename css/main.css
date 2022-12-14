@@ -1,0 +1,19 @@
+
+.main-header {
+    height: 130px;
+    box-shadow: inset 0 -6px 0 black;
+    background-color: pink;
+
+    /* double setting, not good */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.header-nav a{
+    margin-right: 10vw;
+}
