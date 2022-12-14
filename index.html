@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 
@@ -63,3 +64,75 @@
 </body>
 
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meme</title>
+<<<<<<< HEAD
+    <link rel="shortcut icon" type="image/png" href="/img/disneyLogo.png">
+    <link rel="stylesheet" href="css/main.css" />
+=======
+    <link rel="shortcut icon" type="image/png" href="img/disneyLogo.png">
+    
+>>>>>>> cf7eccc38f8c26b760df21f0aaa2b859e7acd9bc
+    <link rel="stylesheet" href="css/editor.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/helpers.css" />
+</head>
+
+<body onload="initMeme()">
+
+    <div class="main-header flex">
+    <div class="logo">
+        <h1>meme</h1>
+    </div>
+        <nav class="main-nav">
+            <ul class="header-nav flex">
+                <li><a href="#">gallery</a></li>
+                <li><a href="#">examples</a></li>
+                <li><a href="#">about</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="editor-container grid">
+        <div class="canvas-container">
+            <canvas id="my-canvas" height="450" width="450">
+            </canvas>
+        </div>
+        <div class="tools-container">
+            <div class="txt-container">
+                <label for="txt">Type your text:</label>
+                <input type="text" id="txt-user" name="txt" required maxlength="15" size="12"
+                    placeholder="text goes here">
+                <button class="btn btnAddTxt" onclick="onAddTxt()">Add</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="gallery-container">
+        <nav class="gallery-nav">
+            <div class="search-container">
+                <input type="text" id="search-user" name="search" required maxlength="15" size="12"
+                    placeholder="search">
+                <button class="btn btnSearch" onclick1="onSearch()">search</button>
+            </div>
+
+        </nav>
+
+
+    </div>
+
+    <script src="js/controller.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/service/memeService.js"></script>
+    <script src="js/service/utilService.js"></script>
+</body>
+
+</html>
+>>>>>>> 05d08108e7884b884864f10e2f3bc696480dc500

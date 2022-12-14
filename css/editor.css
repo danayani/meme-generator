@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 /* editor-grid */
@@ -14,4 +15,22 @@ margin: auto;
 justify-content: center;
 outline: 1px solid black;
 background-color: white;
+=======
+
+
+/* editor-grid */
+
+/* canvas */
+.canvas-container{
+    width: 50vw;
+    background-color: palevioletred;
+}
+
+canvas{
+display: block;
+margin: auto;
+justify-content: center;
+outline: 1px solid black;
+background-color: white;
+>>>>>>> 05d08108e7884b884864f10e2f3bc696480dc500
 }
