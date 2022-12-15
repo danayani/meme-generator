@@ -23,14 +23,18 @@ function moveLine(dx, dy) {
 
 function setLineTxt(txt) {
     var length = gMeme.lines.length
-
+    var elCanvas = document.querySelector('.canvas-container')
+    var elCanWidth = elCanvas.offsetWidth
+    var elCanHeight = elCanvas.offsetHeight
     //to know were to locate the line
-    //TODO: need relativ position
+    // need relativ position
+    var x = elCanWidth / 2 //middle
     var y = 50 //if: first line
-    if (length > 0) y = (length === 1) ? 300 : 150 //if: secend line / all of the rest
+    if (length > 0) y = (length === 1) ? (elCanHeight - 50) : (elCanHeight / 2) //if: secend line / all of the rest
 
 
-    gMeme.lines.push(_createLine(txt, y))
+    gMeme.lines.push(_createLine(txt,x, y))
+    console.log(gMeme.lines)
 }
 
 // function setLineText(newText) {
@@ -46,15 +50,15 @@ function getLastLine() {
     return gMeme.lines[length - 1]
 }
 
-function _createLine(txt, y) {
+function _createLine(txt, x, y) {
     var line = {
         txt,
         size: 50,
         align: 'center',
         color: 'black',
-        x: 200,
-        y, 
-        isDrag : false
+        x,
+        y,
+        isDrag: false
     }
     return line
 }

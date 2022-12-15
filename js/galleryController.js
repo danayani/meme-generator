@@ -22,3 +22,8 @@ function renderGallery() {
 
 }
 
+//go to upDownloadService
+function onImgInput(ev) {
+  loadImageFromInput(ev, setImgService)
+}
+
