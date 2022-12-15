@@ -43,12 +43,16 @@
         </div>
     </div>
 
-    <div class="gallery-container">
+    <div class="gallery-container grid">
         <nav class="gallery-nav">
             <div class="search-container">
                 <input type="text" id="search-user" name="search" required maxlength="15" size="12"
                     placeholder="search">
                 <button class="btn btnSearch" onclick1="onSearch()">search</button>
+            </div>
+            <div class="img-container ">
+            <img id="1" src="img/1.jpg" onclick="onImgSelect('img/1.jpg')" >
+            <img id="2" src="img/2.jpg" onclick="onImgSelect('img/2.jpg')">
             </div>
 
         </nav>
@@ -58,6 +62,8 @@
 
     <script src="js/controller.js"></script>
     <script src="js/memeController.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/service/galleryService.js"></script>
     <script src="js/service/memeService.js"></script>
     <script src="js/service/utilService.js"></script>
 </body>

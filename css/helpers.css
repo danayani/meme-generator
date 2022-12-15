@@ -4,12 +4,7 @@
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-
-    /* height: 50vh; */
-    /* width: 80vw; */
     margin: 100px auto;
     text-align: center;
-    background-color: pink;
+    background-color: rgb(242, 107, 130);
 }

@@ -1,9 +1,14 @@
 
 
 .gallery-container{
-    width: 95vw;
+    /* width: 100vw; */
     height: 500px;
-    background-color: palevioletred;
+    background-color: rgb(35, 89, 236);
+}
+
+img{
+    max-width: 200px;
+    width: 100%;
 }
 
 

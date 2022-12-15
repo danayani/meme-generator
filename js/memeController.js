@@ -8,23 +8,27 @@ function initMeme() {
 
     resizeCanvas()
     //go togther, first bc img and then the other elements
-    drawImg('img/1.jpg')
+    // drawImg('img/1.jpg')
     renderMeme()
 }
 
-function renderMeme() {
-    var currMeme = getMeme()
-
-    drawText(currMeme.lines[0])
+function renderMeme(imgSrc) {
+    console.log('renderMeme')
+    drawImg(imgSrc)
 }
 
-function drawImg(srcImg) {
-    const elImg = new Image() // Create a new html img element
-    elImg.src = srcImg// Send a network req to get that image, define the img src
+//TODO: set img from here, rander is to reopen, afer set img to ser lines
+function setImg(){
 
+}
+
+function drawImg(imgSrc) {
+    const elImg = new Image() // Create a new html img element
+    elImg.src = imgSrc // Send a network req to get that image, define the img src
+    console.log(imgSrc)
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        renderMeme()
+        // renderMeme()
     }
 
 }

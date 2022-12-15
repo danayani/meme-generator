@@ -13,15 +13,13 @@ function setLineTxt() {
 
 }
 
+
 function setLineTxt(txt) {
-    // console.log(gMeme.lines)
     var length = gMeme.lines.length
     gMeme.lines.push(_createLine(txt, 100))
-    // console.log(gMeme.lines)
 }
 function getLastLine(){
     var length = gMeme.lines.length
-    // console.log(length)
     return gMeme.lines[length-1]
 }
 
@@ -36,6 +34,9 @@ function _createLine(txt, x) {
     }
     return line
 }
+
+//defult meme, only in after save
+//TODO : storage, to present on Example/edit 
 function _createMemes() {
     gMeme = {
         selectedImgId: 5,
