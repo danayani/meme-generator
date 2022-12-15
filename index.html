@@ -16,9 +16,9 @@
 <body onload1="initMeme()" onload="onInitGallery()">
 
     <div class="main-header flex">
-    <div class="logo">
-        <h1>meme</h1>
-    </div>
+        <div class="logo">
+            <h1>meme</h1>
+        </div>
         <nav class="main-nav">
             <ul class="header-nav flex">
                 <li><a href="#">gallery</a></li>
@@ -28,6 +28,10 @@
         </nav>
     </div>
 
+    <!-- TODO: add to editor container somehow -->
+    <div class="download-container">
+        <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpeg</a>
+    </div>
     <div class="editor-container grid">
         <div class="canvas-container">
             <canvas id="my-canvas" height="450" width="450">
@@ -51,7 +55,7 @@
                 <button class="btn btnSearch" onclick1="onSearch()">search</button>
             </div>
             <div class="img-container ">
-            <!-- <img id="1" src="img/1.jpg" onclick="onImgSelect('img/1.jpg')" >
+                <!-- <img id="1" src="img/1.jpg" onclick="onImgSelect('img/1.jpg')" >
             <img id="2" src="img/2.jpg" onclick="onImgSelect('img/2.jpg')"> -->
             </div>
 
@@ -65,6 +69,7 @@
     <script src="js/galleryController.js"></script>
     <script src="js/service/galleryService.js"></script>
     <script src="js/service/memeService.js"></script>
+    <script src="js/service/upDownloadService.js"></script>
     <script src="js/service/utilService.js"></script>
 </body>
 

@@ -2,37 +2,53 @@
 
 var gElCanvas
 var gCtx
+var gImg
 
 function initMeme() {
     gElCanvas = document.getElementById('my-canvas')
     gCtx = gElCanvas.getContext('2d')
-
+    addListeners()
     resizeCanvas()
-    //go togther, first bc img and then the other elements
-    drawImg('img/1.jpg')
-    renderMeme()
+    
+    gImg ='img/1.jpg'
+    
 }
 
-function renderMeme(imgSrc) {
-    console.log('renderMeme')
-    drawImg(imgSrc)
+function addListeners() {
+    // addMouseListeners()
+    // addTouchListeners()
+    window.addEventListener('resize', () => {
+        resizeCanvas()
+        renderMeme()
+    })
+}
+
+function renderMeme() {
+    // console.log('renderMeme')
+    drawImg(gImg)
+}
+
+function onAddTxt(){
+    var txt = document.getElementById('txt-user').value
+    
+    setLineTxt(txt) //added to service
+    drawText(getLastLine())
+    document.getElementById('txt-user').value = '' //clean text area
 }
 
 //TODO: set img from here, rander is to reopen, afer set img to ser lines
-function setImg(){
-
+function setImg(imgSrc) {
+    gImg = imgSrc
 }
 
-function drawImg(imgSrc) {
-    console.log(imgSrc)
+function drawImg() {
     const elImg = new Image() // Create a new html img element
-    elImg.src = imgSrc // Send a network req to get that image, define the img src
-    
+    elImg.src = gImg // Send a network req to get that image, define the img src
+
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         // renderMeme()
     }
-
 }
 
 function drawText(currMeme) {
@@ -51,4 +67,8 @@ function drawText(currMeme) {
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
     gElCanvas.width = elContainer.offsetWidth - 10
+}
+
+function getCanvas(){
+    return gElCanvas
 }
