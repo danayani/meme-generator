@@ -1,6 +1,7 @@
 'use strict'
 
 var gMeme
+// var gSelectLineIdx //line is on edit
 
 _createMemes()
 // console.log(gMeme)
@@ -9,15 +10,13 @@ function getMeme() {
     return gMeme
 }
 
-function setLineDrag(isDrag) {
-    gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
+function setSelectLine(lineIdx){
+    gMeme.selectedLineIdx = lineIdx
 }
 
-function moveLine(dx, dy) {
-    const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
-    selectedLine.pos.x += dx
-    selectedLine.pos.y += dy
-
+function setLineDrag(isDrag) {
+    gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
+    console.log(gMeme.lines)
 }
 
 
@@ -70,14 +69,5 @@ function _createMemes() {
         selectedImgId: 1,
         selectedLineIdx: 0,
         lines: []
-        // {
-        //     txt: 'sometimes',
-        //     size: 50,
-        //     align: 'left',
-        //     color: 'black',
-        //     x: 100,
-        //     y: 50
-        // }
-
     }
 }

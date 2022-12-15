@@ -5,15 +5,15 @@ var gCtx
 var gImg
 
 function initMeme() {
-    gImg ='img/1.jpg'//default
+    gImg = 'img/1.jpg'//default
 
     gElCanvas = document.getElementById('my-canvas')
     gCtx = gElCanvas.getContext('2d')
     addListeners()
     resizeCanvas()
-    
-    
-    
+
+
+
 }
 
 function addListeners() {
@@ -37,13 +37,21 @@ function addTouchListeners() {
 }
 function renderMeme() {
     // console.log('renderMeme')
-    drawImg(gImg)
+    drawImg(gImg) //going after to render lines
 }
 
-function onAddTxt(){
+function renderLines() {//come after renderMeme (load img)
+    const meme = getMeme()
+    meme.lines.forEach(line => {
+        drawText(line)
+    })
+}
+
+function onAddTxt() {
     var txt = document.getElementById('txt-user').value
-    
+
     setLineTxt(txt) //added to service
+    console.log(getLastLine())
     drawText(getLastLine())
     document.getElementById('txt-user').value = '' //clean text area
 }
@@ -59,7 +67,7 @@ function drawImg() {
 
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
-        // renderMeme()
+        renderLines()
     }
 }
 
@@ -67,8 +75,8 @@ function drawImgFromUser(img) {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 }
 
-function drawText(currMeme) {
-    var { txt, size, align, color, x, y } = currMeme
+function drawText(currLine) {
+    var { txt, size, align, color, x, y } = currLine
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'white'
     gCtx.fillStyle = color
@@ -85,7 +93,7 @@ function resizeCanvas() {
     gElCanvas.width = elContainer.offsetWidth - 10
 }
 
-function getCanvas(){
+function getCanvas() {
     return gElCanvas
 }
 
@@ -95,63 +103,58 @@ const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 
 function onDown(ev) {
     console.log('onDown()')
-    console.log(getEvPos(ev))
-    //TODO : check if i click on a line
-     //TODO: change bool 'isDrag' & remove class(change apperance)
 
-    // const pos = getEvPos(ev)
-    // const selectedLineIdx = whichLineClicked(pos)
+    //check if i click on a line
+    const pos = getEvPos(ev) // {x: , y: }
+    const currLineIdx = whichLineClicked(pos)
+    if (currLineIdx === -1) return
+    console.log('Line Clicked!')
 
-    // if (selectedLineIdx === -1) return
+    //change bool 'isDrag'
+    setSelectLine(currLineIdx) //set line on service
+    setLineDrag(true) // change line status
+    gStartPos = pos
 
-    // switchLine(selectedLineIdx)
-    // console.log('Line Clicked!')
-    // setLineDrag(true)
-    // gStartPos = pos
-
-    // document.body.style.cursor = 'move'
-    // renderMeme()
+    //TODO: taggle class(change apperance)
 
 }
 
-function onUp() {
+function onUp(ev) {
     console.log('onUp()')
-    console.log(getEvPos(ev))
-    //TODO: change bool 'isDrag' & remove class(change apperance)
-    // setLineDrag(false)
 
+    //change bool 'isDrag' 
+    setLineDrag(false)
+
+    var pos = getEvPos(ev) // {x: , y: }
     const meme = getMeme()
 
-    // const selectedLine = meme.lines[meme.selectedLineIdx]
-    // if (!selectedLine) return
+    const selectedLine = meme.lines[meme.selectedLineIdx]
+    if (!selectedLine) return
 
+    // remove class(change apperance)
 
-    // document.body.style.cursor = 'default'
 }
 
 function onMove(ev) {
-    console.log('onMove()')
-    console.log(getEvPos(ev))
     const meme = getMeme()
 
-    //TODO : is there is a lineSaved, and isDrag true, need to change the line pos
+    //if there is a lineSaved, and isDrag true, need to change the line pos
+    const selectedLine = meme.lines[meme.selectedLineIdx]
+    if (selectedLine && selectedLine.isDrag) {
+        const pos = getEvPos(ev) //curr position
+        const dx = pos.x - gStartPos.x //distance
+        const dy = pos.y - gStartPos.y //distance
 
-    // const selectedLine = meme.lines[meme.selectedLineIdx]
-    // if (selectedLine && selectedLine.isDrag) {
-    //     const pos = getEvPos(ev)
-    //     const dx = pos.x - gStartPos.x
-    //     const dy = pos.y - gStartPos.y
-    //     moveLine(dx, dy)
-    //     gStartPos = pos
-    //     renderMeme()
-    // }
+        moveLine(dx, dy) //change the line pos in gMeme
+        renderMeme() // change pos on the canvas
+        gStartPos = pos
+    }
 }
 
 function moveLine(dx, dy) {
     const selectedLine = gMeme.lines[gMeme.selectedLineIdx]
     selectedLine.x += dx
     selectedLine.y += dy
-
 }
 
 function getEvPos(ev) {
@@ -171,15 +174,19 @@ function getEvPos(ev) {
 }
 
 function whichLineClicked(clickedPos) {
+    // console.log('in')
     gCtx.save()
-    const selectedLineIdx = getMeme().lines.findIndex(line => {
-        const lineMetrics = gCtx.measureText(line.txt);
-        var {x, y} = getMeme().lines
-        return (clickedPos.x > pos.x - lineMetrics.actualBoundingBoxLeft && clickedPos.x < pos.x + lineMetrics.actualBoundingBoxRight &&
-            clickedPos.y > pos.y - lineMetrics.actualBoundingBoxDescent && clickedPos.y < pos.y + lineMetrics.actualBoundingBoxAscent)
+    const currLine = getMeme().lines.findIndex(line => {
+        // console.log('line', line)
+        const lineMetrics = gCtx.measureText(line.txt)
+        // console.log('lineMetrics', lineMetrics)
+        var { x, y } = line
+        // console.log('{ x, y }', x, y)
+        return (clickedPos.x > x - lineMetrics.actualBoundingBoxLeft && clickedPos.x < x + lineMetrics.actualBoundingBoxRight &&
+            clickedPos.y > y - lineMetrics.actualBoundingBoxDescent && clickedPos.y < y + lineMetrics.actualBoundingBoxAscent)
     })
     gCtx.restore()
-    return selectedLineIdx;
+    return currLine;
 }
 
 
