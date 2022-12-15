@@ -1,30 +1,24 @@
-var gGallery
-var counter = 0
+'use strict'
 
 
 function onInitGallery() {
-    _createImgs()
+    initMeme() //init editor canvas
     renderGallery()
 }
 
 function renderGallery() {
+    const imgs = getImg()
+    // console.log(imgs)
     
+
+  var strHTMLs = imgs.map(
+    (img) =>
+    // var { id, src } = img
+    `<img id="${img.id}" src="${img.src}" onclick="onImgSelect('${img.src}')" >
+    `)
+
+    var elImgCont = document.querySelector('.img-container')
+    elImgCont.innerHTML = strHTMLs
+
 }
 
-function _createImg(src, words) {
-    img = {
-        id: counter,
-        src,
-        words,
-    }
-    counter++
-    return img
-}
-
-function _createImgs(){
-    gGallery = [
-        _createImg('1.jpg', ['trump', 'politic']),
-        _createImg('2.jpg', ['puppy', 'cute']),
-        _createImg('3.jpg', ['puppy', 'cute', 'baby']),
-    ]
-}

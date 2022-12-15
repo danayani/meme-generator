@@ -1,5 +1,4 @@
 'use strict'
-var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }];
 
 var gMeme
 
@@ -12,7 +11,6 @@ function getMeme() {
 function setLineTxt() {
 
 }
-
 
 function setLineTxt(txt) {
     var length = gMeme.lines.length
@@ -39,7 +37,7 @@ function _createLine(txt, x) {
 //TODO : storage, to present on Example/edit 
 function _createMemes() {
     gMeme = {
-        selectedImgId: 5,
+        selectedImgId: 1,
         selectedLineIdx: 0,
         lines: [
             {

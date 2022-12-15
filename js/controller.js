@@ -14,7 +14,7 @@ function onAddTxt(){
 }
 
 function onImgSelect(imgSrc){
-    // console.log('onImgSelect')
+    console.log('onImgSelect')
     renderMeme(imgSrc)
 
     //TODO: use display on the editor and the gallery

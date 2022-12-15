@@ -1,3 +1,4 @@
+'use strict'
 
 var gElCanvas
 var gCtx
@@ -8,7 +9,7 @@ function initMeme() {
 
     resizeCanvas()
     //go togther, first bc img and then the other elements
-    // drawImg('img/1.jpg')
+    drawImg('img/1.jpg')
     renderMeme()
 }
 
@@ -23,9 +24,10 @@ function setImg(){
 }
 
 function drawImg(imgSrc) {
+    console.log(imgSrc)
     const elImg = new Image() // Create a new html img element
     elImg.src = imgSrc // Send a network req to get that image, define the img src
-    console.log(imgSrc)
+    
     elImg.onload = () => {
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         // renderMeme()

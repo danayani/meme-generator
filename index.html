@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>meme</title>
-    <link rel="shortcut icon" type="image/png" href="/img/disneyLogo.png">
+    <link rel="shortcut icon" type="image/png" href="img/disneyLogo.png">
     <link rel="stylesheet" href="css/main.css" />
     <link rel="stylesheet" href="css/editor.css" />
     <link rel="stylesheet" href="css/gallery.css" />
     <link rel="stylesheet" href="css/helpers.css" />
 </head>
 
-<body onload="initMeme()">
+<body onload1="initMeme()" onload="onInitGallery()">
 
     <div class="main-header flex">
     <div class="logo">
@@ -51,8 +51,8 @@
                 <button class="btn btnSearch" onclick1="onSearch()">search</button>
             </div>
             <div class="img-container ">
-            <img id="1" src="img/1.jpg" onclick="onImgSelect('img/1.jpg')" >
-            <img id="2" src="img/2.jpg" onclick="onImgSelect('img/2.jpg')">
+            <!-- <img id="1" src="img/1.jpg" onclick="onImgSelect('img/1.jpg')" >
+            <img id="2" src="img/2.jpg" onclick="onImgSelect('img/2.jpg')"> -->
             </div>
 
         </nav>
