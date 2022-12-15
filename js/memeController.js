@@ -11,9 +11,6 @@ function initMeme() {
     gCtx = gElCanvas.getContext('2d')
     addListeners()
     resizeCanvas()
-
-
-
 }
 
 function addListeners() {
@@ -35,6 +32,7 @@ function addTouchListeners() {
     gElCanvas.addEventListener('touchstart', onDown)
     gElCanvas.addEventListener('touchend', onUp)
 }
+
 function renderMeme() {
     // console.log('renderMeme')
     drawImg(gImg) //going after to render lines
