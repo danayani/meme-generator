@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/editor.css" />
     <link rel="stylesheet" href="css/gallery.css" />
     <link rel="stylesheet" href="css/helpers.css" />
+    <script src="https://kit.fontawesome.com/4af2ac5ba6.js" crossorigin="anonymous"></script>
 </head>
 
 <body onload1="initMeme()" onload="onInitGallery()">
@@ -30,7 +31,7 @@
 
     <!-- TODO: add to editor container somehow -->
     <div class="download-container">
-        <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download as jpeg</a>
+        
     </div>
     <div class="editor-container grid">
         <div class="canvas-container">
@@ -38,11 +39,22 @@
             </canvas>
         </div>
         <div class="tools-container grid">
+            <div class ="tool-delete">delete</div>
             <div class="txt-container">
-                <label for="txt">Type your text:</label>
+                <!-- <label for="txt">Type your text:</label> -->
                 <input type="text" id="txt-user" name="txt" required maxlength="15" size="12"
                     placeholder="text goes here">
                 <button class="btn btnAddTxt" onclick="onAddTxt()">Add</button>
+            </div>
+            <div class ="tool-add">add</div>
+            <div class ="tool-color">color</div>
+            <div class ="tool-fontPlus">fontS+</div>
+            <div class ="tool-fontNi">fontS-</div>
+            <div class ="tool-emoji">emoji</div>
+            <div class ="tool-share">share</div>
+            <div class ="tool-download">
+                
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
             </div>
         </div>
     </div>

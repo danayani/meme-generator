@@ -4,7 +4,8 @@
 
 .grid {
     display: grid;
-    margin: 100px auto;
+    /* margin: 100px auto; */
+    
     text-align: center;
     
 }

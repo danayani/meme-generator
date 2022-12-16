@@ -3,6 +3,7 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     background-color: rgb(187, 119, 131);
+    margin-bottom: 100px;
 }
 
 /* canvas-grid */
@@ -22,8 +23,65 @@ canvas {
 
 /* tools */
 .tools-container {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-
     
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    grid-template-areas:
+        'delete    txt   txt   add'
+        'colorC     .               fontN     fontP'
+        'emoji     emoji      emoji      emoji'
+        'share     share      download   download';
+    /* min-height: 100%; */
+
+    text-align: center;
+    font-weight: 400;
+    font-size: 1.5em;
+    place-content: center;
+    justify-content: center;
+    
+}
+
+.tool-delete {
+    background-color: pink;
+    grid-area: delete;
+}
+
+.txt-container {
+    background-color: rgb(230, 92, 115);
+    grid-area: txt;
+}
+
+.tool-add {
+    background-color: pink;
+    grid-area: add;
+}
+
+.tool-color {
+    background-color: pink;
+    grid-area: colorC;
+}
+
+.tool-fontPlus {
+    background-color: pink;
+    grid-area: fontP;
+}
+
+.tool-fontNi {
+    background-color: pink;
+    grid-area: fontN;
+}
+
+.tool-emoji {
+    background-color: pink;
+    grid-area: emoji;
+}
+
+.tool-share {
+    background-color: pink;
+    grid-area: share;
+}
+
+.tool-download {
+    background-color: pink;
+    grid-area: download;
 }
