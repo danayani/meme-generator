@@ -44,8 +44,19 @@ function _createImg(src, keywords) {
 
 function _createImgs(){
     gImgs = [
-        _createImg('img/1.jpg', ['trump', 'politic']),
-        _createImg('img/2.jpg', ['puppy', 'cute']),
-        _createImg('img/3.jpg', ['puppy', 'cute', 'baby']),
+        _createImg('img/10.jpeg', ['alice', 'politic']),
+        _createImg('img/11.jpg', ['ariel', 'cute']),
+        _createImg('img/12.jpg', ['castle', 'cute', 'baby']),
+        _createImg('img/14.jpg', ['lion', 'cute', 'baby']),
+        _createImg('img/15.jpg', ['castle', 'cute', 'baby']),
+        _createImg('img/16.jpg', ['mickey', 'cute', 'baby']),
+        _createImg('img/17.jpeg', ['mohana', 'cute', 'baby']),
+        _createImg('img/18.jpg', ['nemo', 'cute', 'baby']),
+        _createImg('img/19.jpg', ['pinokio', 'cute', 'baby']),
+        _createImg('img/20.jpg', ['princess', 'cute', 'baby']),
+        _createImg('img/21.jpg', ['princess', 'cute', 'baby']),
+        _createImg('img/22.jpg', ['lion', 'cute', 'baby']),
+        _createImg('img/23.jpg', ['princess', 'cute', 'baby']),
+        _createImg('img/24.jpg', ['disney', 'cute', 'baby']),
     ]
 }

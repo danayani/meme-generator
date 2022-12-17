@@ -31,7 +31,8 @@ function renderGallery() {
     //need to fo for each on 'Imgs' and then filter
 
     var fillterImgs = imgs.filter(function (img, idx) {
-      // console.log(img.keywords)
+      console.log(img.keywords[idx])
+      console.log('word', word)
       return img.keywords[idx] === word
     })
 
@@ -60,5 +61,11 @@ function onKeyUpSearch() {
 //go to upDownloadService
 function onImgInput(ev) {
   loadImageFromInput(ev, setImgService)
+
+  var elGallery = document.querySelector('.gallery-container')
+  var elEditor = document.querySelector('.editor-container')
+  
+  elGallery.classList.add('close')
+  elEditor.classList.remove('close')
 }
 

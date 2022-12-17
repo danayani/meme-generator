@@ -11,6 +11,29 @@ body {
     flex-direction: column
 }
 
+.example, .about{
+    padding-top: 100px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+.example{
+    font-size: 50px;
+    align-self: center;
+
+    
+}
+.about{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+.about span{
+    font-size:x-large;
+}
+.about img{
+    border-radius: 50%;
+}
+
+
 .main-header {
     height: 90px;
     box-shadow: inset 0 -6px 0 #00000038;
@@ -37,6 +60,8 @@ body {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 
 }
+
+
 
 .main-header h1 {
     margin-left: 30px;

@@ -36,7 +36,7 @@ function addTouchListeners() {
 
 function renderMeme() {
     // console.log('renderMeme')
-    resizeCanvas()
+    // resizeCanvas()
     drawImg(gImg) //going after to render lines
 }
 
@@ -67,7 +67,9 @@ function drawImg() {
 }
 
 function drawImgFromUser(img) {
+    resizeCanvas()
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
+
 }
 
 function drawText(currLine) {
@@ -87,6 +89,8 @@ function drawText(currLine) {
         gCtx.shadowColor = '#f2f0f8a1'
         // set initial blur of 3px
         gCtx.shadowBlur = 5
+
+        gCtx.fillStyle = 'gray'
     }
 
 

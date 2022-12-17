@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>meme</title>
+    <link rel="shortcut icon" type="image/png" href="img/disneyLogo.png">
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/editor.css" />
+    <link rel="stylesheet" href="css/gallery.css" />
+    <link rel="stylesheet" href="css/helpers.css" />
+    <script src="https://kit.fontawesome.com/4af2ac5ba6.js" crossorigin="anonymous"></script>
+</head>
+
+<body onload1="initMeme()" onload="onInitGallery()">
+
+    <div class="main-header flex">
+        <div class="logo">
+            <h1>Meme</h1>
+        </div>
+        <nav class="main-nav">
+            <ul class="header-nav flex">
+                <li><a href="index.html">gallery</a></li>
+                <li><a href="example.html">examples</a></li>
+                <li><a href="about.html">about</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="main about">
+        <img src="img/dana.jpeg">
+       <span> Dana yaniv, </span>
+        Full-stack developer
+        
+    </div>
+
+    <footer >
+        ✨ Dana Yaniv
+    </footer>
+
+    <script src="js/controller.js"></script>
+    <script src="js/memeController.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/service/galleryService.js"></script>
+    <script src="js/service/memeService.js"></script>
+    <script src="js/service/upDownloadService.js"></script>
+    <script src="js/service/utilService.js"></script>
+</body>
+
+</html>

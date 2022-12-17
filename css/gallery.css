@@ -1,6 +1,6 @@
 .gallery-container {
     /* width: 100vw; */
-    height: 500px;
+    min-height: 500px;
     background-color: var(--clr2);
 
     grid-template-columns: 3fr 1fr;
@@ -45,7 +45,7 @@
 
 img {
     max-width: 130px;
-    width: 80%;
+    /* width: 80%; */
     border-radius: 6px;
     cursor: grab;
 }
@@ -66,9 +66,12 @@ img {
 }
 
 @media (min-width: 780px) {
-
     img {
         max-width: 200px; 
+    }
+    .search-Input{
+        width: 400px;
+        height: 40px;
     }
 
 }
