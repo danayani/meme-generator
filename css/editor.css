@@ -53,6 +53,9 @@ canvas {
     box-shadow: 0px 0px 23px 4px var(--clr5);
     border-radius: 6px;
 }
+.tools-container > :first-child {
+    padding-top: 0.5rem;
+  }
 
 .tool-delete {
     /* background-color: pink; */
@@ -99,10 +102,17 @@ canvas {
     grid-area: download;
 }
 
+.btnAddTxt{
+    background-color: rgb(172, 226, 208);
+}
+.btnDeleteLine{
+    background-color: rgb(233, 122, 122);
+}
+
 .tool-btn{
-    height: 40px;
-    width: 40px;
-    font-size: large;
+    height: 45px;
+    width: 45px;
+    font-size: 20px;
 
     align-items: center;
     justify-items: center;
@@ -123,11 +133,21 @@ canvas {
     }
     
     .canvas-container {
-        width: 400px;
-        height: 400px;
+        width: 500px;
+        height: 500px;
     }
 
     .tools-container {
         align-self: center;
+        width: 300px;
+        height: 300px;
+
     }
+    .tool-btn{
+        height: 55px;
+        width: 55px;
+        font-size: 30px;  
+    }
+
+
 }
