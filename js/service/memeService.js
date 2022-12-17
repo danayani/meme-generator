@@ -19,7 +19,6 @@ function setLineDrag(isDrag) {
     // console.log(gMeme.lines)
 }
 
-
 function setLineTxt(txt) {
     var length = gMeme.lines.length
     var elCanvas = document.querySelector('.canvas-container')
@@ -33,7 +32,9 @@ function setLineTxt(txt) {
 
 
     gMeme.lines.push(_createLine(txt,x, y))
-    console.log(gMeme.lines)
+    // console.log(gMeme.lines)
+    gMeme.selectedLineIdx = length
+    // console.log(gMeme)
 }
 
 // function setLineText(newText) {

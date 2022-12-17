@@ -102,7 +102,7 @@ var gStartPos
 const gTouchEvs = ['touchstart', 'touchmove', 'touchend']
 
 function onDown(ev) {
-    console.log('onDown()')
+    // console.log('onDown()')
 
     //check if i click on a line
     const pos = getEvPos(ev) // {x: , y: }
@@ -130,11 +130,22 @@ function onUp(ev) {
     var pos = getEvPos(ev) // {x: , y: }
     const meme = getMeme()
 
-    const selectedLine = meme.lines[meme.selectedLineIdx]
-    if (!selectedLine) return
+    var lineId = whichLineClicked(pos)
+    // console.log(lineId)
+    if(lineId < 0){
+        document.getElementById('txt-user').value = ''
+        setLineDrag(false)
+        meme.selectedLineIdx = -1
+        return
+    }
 
-    // remove class(change apperance)
-
+    document.getElementById('txt-user').value = meme.lines[meme.selectedLineIdx].txt
+    
+    // const selectedLine = meme.lines[meme.selectedLineIdx]
+    // if (!selectedLine) {
+    //     document.getElementById('txt-user').value = ''
+    //     return
+    // }
 }
 
 function onMove(ev) {

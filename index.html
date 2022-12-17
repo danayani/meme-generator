@@ -39,7 +39,11 @@
             </canvas>
         </div>
         <div class="tools-container grid">
-            <div class="tool-delete"><i class="fa-solid fa-trash"></i></div>
+            <div class="tool-delete">
+                <button class="btn btnDeleteTxt" onclick1="onDeleteTxt()">
+                    <i class="fa-solid fa-trash"></i>
+                </button>
+            </div>
             <div class="txt-container">
                 <!-- <label for="txt">Type your text:</label> -->
                 <input type="text" id="txt-user" name="txt" required maxlength="15" size="12"
@@ -50,10 +54,10 @@
                 </button>
             </div>
             <div class="tool-color">
-                    <label for="create-color">
-                        <i class="fa fa-palette btn"></i>
-                        <input type="color" id="create-color" style="opacity: 0;size: 1px;">
-                  </label>
+                <label for="create-color">
+                    <i class="fa fa-palette btn"></i>
+                    <input type="color" id="create-color" style="opacity: 0; width: 0px; height: 0px;">
+                </label>
             </div>
             <div class="tool-fontPlus">
                 <button><i class="fa-solid fa-plus"></i></button>
