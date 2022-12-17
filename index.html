@@ -39,33 +39,43 @@
             </canvas>
         </div>
         <div class="tools-container grid">
-            <div class="tool-delete">
-                <button class="btn btnDeleteTxt" onclick1="onDeleteTxt()">
+            <div class="tool-delete ">
+                <button class="btn btnDeleteLine tool-btn" onclick="onDeleteLine()">
                     <i class="fa-solid fa-trash"></i>
                 </button>
             </div>
-            <div class="txt-container">
+            <div class="txt-container ">
                 <!-- <label for="txt">Type your text:</label> -->
                 <input type="text" id="txt-user" name="txt" required maxlength="15" size="12"
                     placeholder="text goes here">
             </div>
-            <div class="tool-add">
-                <button class="btn btnAddTxt" onclick="onAddTxt()"><i class="fa-solid fa-check"></i>
+            <div class="tool-add ">
+                <button class="btn btnAddTxt tool-btn" onclick="onAddTxt()"><i class="fa-solid fa-check"></i>
                 </button>
             </div>
-            <div class="tool-color">
+            <div class="tool-color ">
                 <label for="create-color">
-                    <i class="fa fa-palette btn"></i>
-                    <input type="color" id="create-color" style="opacity: 0; width: 0px; height: 0px;">
+                    <i class="fa fa-palette btn tool-btn"></i>
+                    <input type="color" id="create-color" oninput="onSetColor(this)"
+                        style="opacity: 0; width: 0px; height: 0px;">   
                 </label>
             </div>
             <div class="tool-fontPlus">
-                <button><i class="fa-solid fa-plus"></i></button>
+                <button class="fa-solid fa-maximize tool-btn" onclick="onChangeSizeLine(1)"></button>
             </div>
             <div class="tool-fontNi">
-                <button><i class="fa-solid fa-minus"></i></button>
+                <button class="fa-solid fa-minimize tool-btn" onclick="onChangeSizeLine(-1)"></button>
+                <!-- <i class="fa-solid fa-maximize tool-btn" onclick="onChangeSizeLine(-1)"></i> -->
+                <!-- <i class="fa-solid fa-minus "></i> -->
             </div>
-            <div class="tool-emoji">emoji</div>
+            <div class="tool-emoji">
+                <button class="tool-btn" onclick="onAddEmoji(this)">💣</button>
+                <button class="tool-btn" onclick="onAddEmoji(this)">⛔</button>
+                <button class="tool-btn" onclick="onAddEmoji(this)">🙈</button>
+                <button class="tool-btn" onclick="onAddEmoji(this)">🔥</button>
+                <button class="tool-btn" onclick="onAddEmoji(this)">🍻</button>
+
+            </div>
             <div class="tool-share"><i class="fa-solid fa-share-nodes"></i></div>
             <div class="tool-download">
                 <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">

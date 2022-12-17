@@ -6,26 +6,25 @@
 .editor-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
-    background-color: rgb(187, 119, 131);
-    margin-bottom: 100px;
+    background-color: var(--clr2);
+    margin-bottom: 20px;
 
+    box-shadow: 0px 0px 23px 4px var(--clr5);
+    border-radius: 6px;
     /* opacity: 0; */
 }
 
 /* canvas-grid */
 .canvas-container {
-    /* max-width: 300px;
-    max-height: 300px; */
     width: 300px;
     height: 300px;
-    /* background-color: palevioletred; */
 }
 
 canvas {
     display: block;
     margin: auto;
     justify-content: center;
-    outline: 1px solid black;
+    outline: 1px solid white;
     background-color: white;
 }
 
@@ -49,8 +48,10 @@ canvas {
     font-size: 1.5em;
 
     align-self: start;
-    background-color: pink;
+    background-color: var(--clr4);
 
+    box-shadow: 0px 0px 23px 4px var(--clr5);
+    border-radius: 6px;
 }
 
 .tool-delete {
@@ -98,6 +99,19 @@ canvas {
     grid-area: download;
 }
 
+.tool-btn{
+    height: 40px;
+    width: 40px;
+    font-size: large;
+
+    align-items: center;
+    justify-items: center;
+
+    border-color: white;
+    
+}
+
+
 /* emoji section */
 
 @media (min-width: 780px) {
@@ -111,7 +125,6 @@ canvas {
     .canvas-container {
         width: 400px;
         height: 400px;
-        background-color: palevioletred; 
     }
 
     .tools-container {

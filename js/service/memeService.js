@@ -33,7 +33,7 @@ function setLineTxt(txt) {
 
     gMeme.lines.push(_createLine(txt,x, y))
     // console.log(gMeme.lines)
-    gMeme.selectedLineIdx = length
+    gMeme.selectedLineIdx = -1 
     // console.log(gMeme)
 }
 
@@ -50,12 +50,34 @@ function getLastLine() {
     return gMeme.lines[length - 1]
 }
 
+//tools functions
+function deleteLine(){
+    gMeme.lines.splice(gMeme.selectedLineIdx, 1)
+    gMeme.selectedLineIdx = -1 //change selected Line
+}
+
+function updateTxt(txt){
+    gMeme.lines[gMeme.selectedLineIdx].txt = txt
+    // renderMeme()
+}
+
+function setColor(colorValue){
+    gMeme.lines[gMeme.selectedLineIdx].color = colorValue
+    // renderMeme()
+}
+
+function changeSizeLine(diff){
+    console.log('changeSizeLine')
+    gMeme.lines[gMeme.selectedLineIdx].size += (diff*5)
+}
+
+//self functions
 function _createLine(txt, x, y) {
     var line = {
         txt,
         size: 50,
         align: 'center',
-        color: 'black',
+        color: 'white',
         x,
         y,
         isDrag: false
@@ -68,7 +90,7 @@ function _createLine(txt, x, y) {
 function _createMemes() {
     gMeme = {
         selectedImgId: 1,
-        selectedLineIdx: 0,
+        selectedLineIdx: -1,
         lines: []
     }
 }

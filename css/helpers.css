@@ -1,3 +1,25 @@
+:root {
+    /* header color */
+    --clr0: #e4cccc;
+    /* brand color */
+    --clr1: #000000;
+    /* p color */
+    --clr2: #e4cccc;
+    /* background */
+    --clr3: #f2f0f8a1;
+    /* tools */
+    --clr4: #f0e2e2;
+
+    /* shadow */
+    --clr5:#00000038;
+   
+
+    /* bp */
+    --s: 600px;
+    --m: 740px;
+    --l: 980px;
+}
+
 @font-face {
     font-family: fa;
     src: url("/fonts/font-awesome/fa-brands-400.ttf");
@@ -18,7 +40,10 @@
 
 /* when editor/gallery open */
 .close{
-    opacity: 0;  
+    display:none; 
+}
+.open{
+    display:block; 
 }
 
 button, .btn{

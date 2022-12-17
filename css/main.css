@@ -2,14 +2,19 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--clr3);
+}
+
 .main-header {
     height: 130px;
     box-shadow: inset 0 -6px 0 #00000038;
-    background-color: pink;
+    background-color: var(--clr0);
 
     /* double setting, not good */
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 5vh;
 }
 
 .header-nav {
@@ -17,7 +22,10 @@
     padding: 0;
     list-style-type: none;
 }
-.header-nav a{
+
+.header-nav a {
     margin-right: 10vw;
 }
-
+.main-header h1 {
+    margin-left: 20px;
+}
