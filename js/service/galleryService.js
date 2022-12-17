@@ -17,11 +17,20 @@ function getImgsFilter(){
 
 function setImgsFilter(searchStr){
     gImgsFilter = searchStr
-    console.log('setImgsFilter')
-    console.log(gImgsFilter)
+    // console.log('setImgsFilter')
+    // console.log(gImgsFilter)
 }
 
+function onImgSelect(imgSrc){
+    setImg(imgSrc)
+    renderMeme()
 
+    var elGallery = document.querySelector('.gallery-container')
+    var elEditor = document.querySelector('.editor-container')
+    
+    elGallery.classList.add('close')
+    elEditor.classList.remove('close')
+}
 
 function _createImg(src, keywords) {
     var img = {

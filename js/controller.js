@@ -13,8 +13,3 @@ function onInit(){} //on the making
 //     document.getElementById('txt-user').value = '' //clean text area
 // }
 
-function onImgSelect(imgSrc){
-    setImg(imgSrc)
-    renderMeme()
-    //TODO: use display on the editor and the gallery
-}

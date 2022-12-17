@@ -14,7 +14,7 @@ function onInitGallery() {
 // });
 
 function renderGallery() {
-  console.log('renderGallery')
+  // console.log('renderGallery')
   const imgs = getImg()
   // console.log(!getImgsFilter())
 
@@ -25,11 +25,16 @@ function renderGallery() {
         `<img id="${img.id}" src="${img.src}" onclick="onImgSelect('${img.src}')" >
       `)
   } else {
+
     var word = gImgsFilter
 
+    //need to fo for each on 'Imgs' and then filter
+
     var fillterImgs = imgs.filter(function (img, idx) {
+      // console.log(img.keywords)
       return img.keywords[idx] === word
     })
+
 
     var strHTMLs = fillterImgs.map(
       (img) =>

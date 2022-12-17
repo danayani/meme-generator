@@ -36,10 +36,12 @@ function addTouchListeners() {
 
 function renderMeme() {
     // console.log('renderMeme')
+    resizeCanvas()
     drawImg(gImg) //going after to render lines
 }
 
 function renderLines() {//come after renderMeme (load img)
+    
     const meme = getMeme()
     meme.lines.forEach(line => {
         drawText(line)
@@ -58,6 +60,7 @@ function drawImg() {
     elImg.src = gImg // Send a network req to get that image, define the img src
 
     elImg.onload = () => {
+        resizeCanvas()
         gCtx.drawImage(elImg, 0, 0, gElCanvas.width, gElCanvas.height)
         renderLines()
     }
