@@ -16,7 +16,7 @@ function setSelectLine(lineIdx){
 
 function setLineDrag(isDrag) {
     gMeme.lines[gMeme.selectedLineIdx].isDrag = isDrag
-    console.log(gMeme.lines)
+    // console.log(gMeme.lines)
 }
 
 

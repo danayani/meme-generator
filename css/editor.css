@@ -1,16 +1,24 @@
+* {
+    box-sizing: border-box;
+}
+
 /* editor-grid */
 .editor-container {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
     background-color: rgb(187, 119, 131);
     margin-bottom: 100px;
+
+    /* opacity: 0; */
 }
 
 /* canvas-grid */
 .canvas-container {
-    width: 50vw;
-    background-color: palevioletred;
-
+    /* max-width: 300px;
+    max-height: 300px; */
+    width: 300px;
+    height: 300px;
+    /* background-color: palevioletred; */
 }
 
 canvas {
@@ -21,11 +29,14 @@ canvas {
     background-color: white;
 }
 
+.drag {
+    background-color: white;
+}
+
 /* tools */
 .tools-container {
-    
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr ;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas:
         'delete    txt   txt   add'
         'colorC     .               fontN     fontP'
@@ -36,52 +47,74 @@ canvas {
     text-align: center;
     font-weight: 400;
     font-size: 1.5em;
-    place-content: center;
-    justify-content: center;
-    
+
+    align-self: start;
+    background-color: pink;
+
 }
 
 .tool-delete {
-    background-color: pink;
+    /* background-color: pink; */
     grid-area: delete;
 }
 
 .txt-container {
-    background-color: rgb(230, 92, 115);
+    /* background-color: rgb(230, 92, 115); */
     grid-area: txt;
 }
 
 .tool-add {
-    background-color: pink;
+    /* background-color: pink; */
     grid-area: add;
 }
 
 .tool-color {
-    background-color: pink;
+    /* background-color: pink; */
     grid-area: colorC;
 }
 
 .tool-fontPlus {
-    background-color: pink;
+    /* background-color: pink; */
     grid-area: fontP;
 }
 
 .tool-fontNi {
-    background-color: pink;
+    /* background-color: pink; */
     grid-area: fontN;
 }
 
 .tool-emoji {
-    background-color: pink;
+    /* background-color: pink; */
     grid-area: emoji;
 }
 
 .tool-share {
-    background-color: pink;
+    /* background-color: pink; */
     grid-area: share;
 }
 
 .tool-download {
-    background-color: pink;
+    /* background-color: pink; */
     grid-area: download;
+}
+
+/* emoji section */
+
+@media (min-width: 780px) {
+    .editor-container {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        /* background-color: rgb(187, 119, 131);
+        margin-bottom: 100px; */
+    }
+    
+    .canvas-container {
+        width: 400px;
+        height: 400px;
+        background-color: palevioletred; 
+    }
+
+    .tools-container {
+        align-self: center;
+    }
 }

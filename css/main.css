@@ -1,7 +1,10 @@
+* {
+    box-sizing: border-box;
+}
 
 .main-header {
     height: 130px;
-    box-shadow: inset 0 -6px 0 black;
+    box-shadow: inset 0 -6px 0 #00000038;
     background-color: pink;
 
     /* double setting, not good */
@@ -17,3 +20,4 @@
 .header-nav a{
     margin-right: 10vw;
 }
+

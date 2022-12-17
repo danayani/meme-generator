@@ -31,30 +31,35 @@
 
     <!-- TODO: add to editor container somehow -->
     <div class="download-container">
-        
+
     </div>
     <div class="editor-container grid">
         <div class="canvas-container">
-            <canvas id="my-canvas" height="450" width="450">
+            <canvas id="my-canvas" height="300" width="300">
             </canvas>
         </div>
         <div class="tools-container grid">
-            <div class ="tool-delete">delete</div>
+            <div class="tool-delete"><i class="fa-solid fa-trash"></i></div>
             <div class="txt-container">
                 <!-- <label for="txt">Type your text:</label> -->
                 <input type="text" id="txt-user" name="txt" required maxlength="15" size="12"
                     placeholder="text goes here">
-                <button class="btn btnAddTxt" onclick="onAddTxt()">Add</button>
             </div>
-            <div class ="tool-add">add</div>
-            <div class ="tool-color">color</div>
-            <div class ="tool-fontPlus">fontS+</div>
-            <div class ="tool-fontNi">fontS-</div>
-            <div class ="tool-emoji">emoji</div>
-            <div class ="tool-share">share</div>
-            <div class ="tool-download">
-                
-                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">Download</a>
+            <div class="tool-add">
+                <button class="btn btnAddTxt" onclick="onAddTxt()"><i class="fa-solid fa-check"></i>
+                </button>
+            </div>
+            <div class="tool-color"><i class="fa-solid fa-palette"></i>
+                <input type="color" id="text-color" />
+            </div>
+            <div class="tool-fontPlus"><i class="fa-solid fa-plus"></i></div>
+            <div class="tool-fontNi"><i class="fa-solid fa-minus"></i></div>
+            <div class="tool-emoji">emoji</div>
+            <div class="tool-share"><i class="fa-solid fa-share-nodes"></i></div>
+            <div class="tool-download">
+                <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">
+                    <i class="fa-solid fa-download"></i>
+                </a>
             </div>
         </div>
     </div>
@@ -66,11 +71,17 @@
                     placeholder="search">
                 <button class="btn btnSearch" onclick1="onSearch()">search</button>
             </div>
-            
-            <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" />
-        </nav>
-            <div class="img-container ">
+            <div class="upload-container flex ">
+                <button type="file" class="file-input btn flex" name="image" onchange="onImgInput(event)"> 
+                    <i class="fa-solid fa-upload "></i>
+                    <input type="file" class="file-input inp" name="image" onchange="onImgInput(event)" />
+                </button>
+                <!-- <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" /> -->
+                
             </div>
+        </nav>
+        <div class="img-container ">
+        </div>
 
 
 

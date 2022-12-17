@@ -1,11 +1,22 @@
+@font-face {
+    font-family: fa;
+    src: url("/fonts/font-awesome/fa-brands-400.ttf");
+}
+
 .flex {
     display: flex;
 }
 
 .grid {
     display: grid;
-    /* margin: 100px auto; */
+        
+    place-content: center;
+    align-items: center;
+    justify-items: center;
     
-    text-align: center;
-    
+}
+
+/* when editor/gallery open */
+.close{
+    opacity: 0; 
 }

@@ -21,6 +21,7 @@ function addListeners() {
         renderMeme()
     })
 }
+
 function addMouseListeners() {
     gElCanvas.addEventListener('mousemove', onMove)
     gElCanvas.addEventListener('mousedown', onDown)
@@ -89,6 +90,7 @@ function drawText(currLine) {
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
     gElCanvas.width = elContainer.offsetWidth - 10
+    gElCanvas.height = elContainer.offsetWidth - 10
 }
 
 function getCanvas() {
@@ -111,6 +113,7 @@ function onDown(ev) {
     //change bool 'isDrag'
     setSelectLine(currLineIdx) //set line on service
     setLineDrag(true) // change line status
+    document.body.style.cursor = 'move'
     gStartPos = pos
 
     //TODO: taggle class(change apperance)
@@ -122,6 +125,7 @@ function onUp(ev) {
 
     //change bool 'isDrag' 
     setLineDrag(false)
+    document.body.style.cursor = 'default'
 
     var pos = getEvPos(ev) // {x: , y: }
     const meme = getMeme()
