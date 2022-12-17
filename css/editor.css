@@ -9,13 +9,16 @@
     background-color: var(--clr2);
     margin-bottom: 20px;
 
-    box-shadow: 0px 0px 23px 4px var(--clr5);
-    border-radius: 6px;
+    /* box-shadow: 0px 0px 23px 4px var(--clr5);
+    border-radius: 6px; */
+
+    
     /* opacity: 0; */
 }
 
 /* canvas-grid */
 .canvas-container {
+    margin-top: 5px;
     width: 300px;
     height: 300px;
 }
@@ -65,6 +68,7 @@ canvas {
 .txt-container {
     /* background-color: rgb(230, 92, 115); */
     grid-area: txt;
+    
 }
 
 .tool-add {
@@ -109,6 +113,10 @@ canvas {
     background-color: rgb(233, 122, 122);
 }
 
+.txt-user{
+    width: 148px;
+    height: 40px;
+}
 .tool-btn{
     height: 45px;
     width: 45px;
@@ -116,9 +124,7 @@ canvas {
 
     align-items: center;
     justify-items: center;
-
     border-color: white;
-    
 }
 
 

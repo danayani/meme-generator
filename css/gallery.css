@@ -1,14 +1,47 @@
+
 .gallery-container {
     /* width: 100vw; */
     height: 500px;
     background-color: var(--clr2);
 
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 100px 1fr;
+    background-color: var(--clr2);
+    margin-bottom: 20px;
 
+    grid-template-areas:
+    'search       upload'
+    'img         img';
 }
+.search-container{
+    grid-area: search; 
+}
+.upload-container{
+    grid-area: upload; 
+    font-size: 50px;
+    
+}
+.file-input{
+    width: 90px;
+    font-size: large;
+    padding-top: 10px;
+    padding-bottom: -15px;
+
+    border-color: white;
+}
+    
+
+.img-container{
+   grid-area: img; 
+}
+
+
+
 
 img {
     max-width: 200px;
     width: 80%;
+
 }
 
 /* upload */

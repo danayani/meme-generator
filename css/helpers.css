@@ -29,6 +29,14 @@
     display: flex;
 }
 
+.main{
+    box-shadow: 0px 0px 23px 4px var(--clr5);
+    border-radius: 6px;
+
+    width: 90%;
+    margin: auto;
+}
+
 .grid {
     display: grid;
         

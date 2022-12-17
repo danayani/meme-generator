@@ -3,12 +3,25 @@
 // var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }];
 var gImgs
 var counter = 0
+var gImgsFilter =''
 
 _createImgs()
 
 function getImg(){
     return gImgs
 }
+
+function getImgsFilter(){
+    return gImgsFilter
+}
+
+function setImgsFilter(searchStr){
+    gImgsFilter = searchStr
+    console.log('setImgsFilter')
+    console.log(gImgsFilter)
+}
+
+
 
 function _createImg(src, keywords) {
     var img = {

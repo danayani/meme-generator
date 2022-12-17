@@ -30,10 +30,8 @@
     </div>
 
     <!-- TODO: add to editor container somehow -->
-    <div class="download-container">
 
-    </div>
-    <div class="editor-container grid">
+    <div class="editor-container grid main close ">
         <div class="canvas-container">
             <canvas id="my-canvas" height="300" width="300">
             </canvas>
@@ -46,7 +44,7 @@
             </div>
             <div class="txt-container ">
                 <!-- <label for="txt">Type your text:</label> -->
-                <input type="text" id="txt-user" name="txt" required maxlength="15" size="12"
+                <input type="text" id="txt-user" class="txt-user" name="txt" required maxlength="15" size="20"
                     placeholder="text goes here">
             </div>
             <div class="tool-add ">
@@ -55,12 +53,11 @@
             </div>
             <div class="tool-color ">
                 <button class="tool-btn ">
-                <label for="create-color">
-                    <i class="fa fa-palette btn tool-btn"></i>
-                    <input type="color" id="create-color" oninput="onSetColor(this)"
-                        style="opacity: 0; width: 0px; height: 0px;">   
-                        <!--  -->
-                </label>
+                    <label for="create-color">
+                        <i class="fa fa-palette btn tool-btn"></i>
+                        <input type="color" id="create-color" oninput="onSetColor(this)"
+                            style="opacity: 0; width: 0px; height: 0px;">
+                    </label>
                 </button>
             </div>
             <div class="tool-fontPlus">
@@ -68,8 +65,6 @@
             </div>
             <div class="tool-fontNi">
                 <button class="fa-solid fa-minimize tool-btn" onclick="onChangeSizeLine(-1)"></button>
-                <!-- <i class="fa-solid fa-maximize tool-btn" onclick="onChangeSizeLine(-1)"></i> -->
-                <!-- <i class="fa-solid fa-minus "></i> -->
             </div>
             <div class="tool-emoji">
                 <button class="tool-btn" onclick="onAddEmoji(this)">💣</button>
@@ -77,12 +72,12 @@
                 <button class="tool-btn" onclick="onAddEmoji(this)">🙈</button>
                 <button class="tool-btn" onclick="onAddEmoji(this)">🔥</button>
                 <button class="tool-btn" onclick="onAddEmoji(this)">🍻</button>
-
             </div>
             <div class="tool-share">
                 <a href="#" class="btn" onclick="onUploadImg()">
-                    <i class="fa-solid fa-share-nodes"></i></div>
-                </a>
+                    <i class="fa-solid fa-share-nodes"></i>
+            </div>
+            </a>
             <div class="tool-download">
                 <a href="#" class="btn" onclick="downloadImg(this)" download="my-img.jpg">
                     <i class="fa-solid fa-download"></i>
@@ -91,22 +86,24 @@
         </div>
     </div>
 
-    <div class="gallery-container grid">
+    <div class="gallery-container main grid">
         <nav class="gallery-nav">
             <div class="search-container">
-                <input type="text" id="search-user" name="search" required maxlength="15" size="12"
+                <input class="search-Input" type="text" onkeyup="onKeyUpSearch()" placeHolder="Search...">
+                <!-- <input type="text" id="search-user" name="search" required maxlength="15" size="12"
                     placeholder="search">
-                <button class="btn btnSearch" onclick1="onSearch()">search</button>
+                <button class="btn btnSearch" onclick1="onSearch()">search</button> -->
             </div>
-            <div class="upload-container flex ">
+        </nav>   
+            <div class="upload-container ">
                 <button type="file" class="file-input btn flex" name="image" onchange="onImgInput(event)">
-                    <i class="fa-solid fa-upload "></i>
-                    <input type="file" class="file-input inp" name="image" onchange="onImgInput(event)" />
+                    <i class="fa-solid btn fa-upload " style="font-size-adjust: 50px;"></i>
+                    <input type="file" class="file-input btn inp" name="image" onchange="onImgInput(event)" 
+                     style="opacity: 0; width: 20px;" />
+                    
                 </button>
-                <!-- <input type="file" class="file-input btn" name="image" onchange="onImgInput(event)" /> -->
-
             </div>
-        </nav>
+        
         <div class="img-container ">
         </div>
 
