@@ -18,5 +18,9 @@
 
 /* when editor/gallery open */
 .close{
-    opacity: 0; 
+    opacity: 0;  
+}
+
+button, .btn{
+    cursor:grab;
 }
