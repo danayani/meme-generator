@@ -2,11 +2,9 @@
 
 var gElCanvas
 var gCtx
-var gImg
+// var gImg
 
 function initMeme() {
-    gImg = 'img/1.jpg'//default
-
     gElCanvas = document.getElementById('my-canvas')
     gCtx = gElCanvas.getContext('2d')
     addListeners()
@@ -50,10 +48,10 @@ function renderLines() {//come after renderMeme (load img)
 
 
 
-//TODO: set img from here, rander is to reopen, afer set img to ser lines
-function setImg(imgSrc) {
-    gImg = imgSrc
-}
+
+// function setImg(imgSrc) {
+//     gImg = imgSrc
+// }
 
 function drawImg() {
     const elImg = new Image() // Create a new html img element
@@ -68,6 +66,7 @@ function drawImg() {
 
 function drawImgFromUser(img) {
     resizeCanvas()
+
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
 
 }
@@ -142,11 +141,11 @@ function onDeleteLine() {
     // console.log(getMeme())
 }
 
-function onSetColor(elcolor) {
+function onChangeColor(elcolor) {
     const meme = getMeme()
     if (meme.selectedLineIdx < 0) return
 
-    setColor(elcolor.value)
+    changeColor(elcolor.value)
     renderMeme()
 }
 

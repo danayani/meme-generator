@@ -2,7 +2,7 @@
 
 // var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }];
 var gImgs
-var counter = 0
+var counterId = 0
 var gImgsFilter = ''
 
 _createImgs()
@@ -10,7 +10,6 @@ _createImgs()
 
 function getImgs() {
     if (gImgsFilter) {
-
         let filteredImgs = []
         gImgs.forEach(img => {
             img.keywords.forEach(key => {
@@ -24,15 +23,8 @@ function getImgs() {
     } else return gImgs
 }
 
-
-// function getImgsFilter() {
-//     return gImgsFilter
-// }
-
 function setImgsFilter(searchStr) {
     gImgsFilter = searchStr
-    // console.log('setImgsFilter')
-    console.log(gImgsFilter)
 }
 
 function onImgSelect(imgSrc) {
@@ -46,31 +38,45 @@ function onImgSelect(imgSrc) {
     elEditor.classList.remove('close')
 }
 
+function getImgById(imgId){
+
+}
+
+//to be tested
+function uploadImgToGallery (imgSrc){
+    var newImg = _createImg(imgSrc, '')
+    gImgs.unshift(newImg)
+
+    //move render to conroller
+    renderGallery()
+}
+
+
 function _createImg(src, keywords) {
     var img = {
-        id: counter,
+        id: counterId,
         src,
         keywords,
     }
-    counter++
+    counterId++
     return img
 }
 
 function _createImgs() {
     gImgs = [
         _createImg('img/10.jpeg', ['alice', 'politic']),
-        _createImg('img/11.jpg', ['ariel', 'cute']),
-        _createImg('img/12.jpg', ['castle', 'cute', 'baby']),
-        _createImg('img/14.jpg', ['lion', 'cute', 'baby']),
-        _createImg('img/15.jpg', ['castle', 'cute', 'baby']),
-        _createImg('img/16.jpg', ['mickey', 'cute', 'baby']),
-        _createImg('img/17.jpeg', ['mohana', 'cute', 'baby']),
-        _createImg('img/18.jpg', ['nemo', 'cute', 'baby']),
-        _createImg('img/19.jpg', ['pinokio', 'cute', 'baby']),
-        _createImg('img/20.jpg', ['princess', 'cute', 'baby']),
-        _createImg('img/21.jpg', ['princess', 'cute', 'baby']),
-        _createImg('img/22.jpg', ['lion', 'cute', 'baby']),
-        _createImg('img/23.jpg', ['princess', 'cute', 'baby']),
-        _createImg('img/24.jpg', ['disney', 'cute', 'baby']),
+        _createImg('img/11.jpg', ['ariel', 'disney']),
+        _createImg('img/12.jpg', ['castle', 'disney', 'baby']),
+        _createImg('img/14.jpg', ['lion', 'happy', 'friend']),
+        _createImg('img/15.jpg', ['castle', 'disney', 'baby']),
+        _createImg('img/16.jpg', ['mickey', 'mouse', 'pink']),
+        _createImg('img/17.jpeg', ['mohana', 'princess', 'strong']),
+        _createImg('img/18.jpg', ['nemo', 'fish', 'baby']),
+        _createImg('img/19.jpg', ['pinokio', 'baby']),
+        _createImg('img/20.jpg', ['princess', 'frog']),
+        _createImg('img/21.jpg', ['princess', 'sad', 'cry']),
+        _createImg('img/22.jpg', ['lion', 'bad', 'scary']),
+        _createImg('img/23.jpg', ['princess', 'boy', 'mad']),
+        _createImg('img/24.jpg', ['disney', 'friend', 'toy']),
     ]
 }

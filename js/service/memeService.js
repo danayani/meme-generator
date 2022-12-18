@@ -1,6 +1,7 @@
 'use strict'
 
 var gMeme
+var gImg
 // var gSelectLineIdx //line is on edit
 
 _createMemes()
@@ -12,6 +13,12 @@ function getMeme() {
 
 function setSelectLine(lineIdx){
     gMeme.selectedLineIdx = lineIdx
+}
+
+
+function setImg(imgSrc) {
+    console()
+    gImg = imgSrc
 }
 
 function setLineDrag(isDrag) {
@@ -58,12 +65,10 @@ function deleteLine(){
 
 function updateTxt(txt){
     gMeme.lines[gMeme.selectedLineIdx].txt = txt
-    // renderMeme()
 }
 
-function setColor(colorValue){
+function changeColor(colorValue){
     gMeme.lines[gMeme.selectedLineIdx].color = colorValue
-    // renderMeme()
 }
 
 function changeSizeLine(diff){
@@ -89,7 +94,7 @@ function _createLine(txt, x, y) {
 //TODO : storage, to present on Example/edit 
 function _createMemes() {
     gMeme = {
-        selectedImgId: 1,
+        selectedImgId: 0,
         selectedLineIdx: -1,
         lines: []
     }

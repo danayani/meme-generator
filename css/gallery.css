@@ -28,13 +28,11 @@
     font-size: large;
     padding-top: 10px;
     padding-bottom: -15px;
-
     border-color: white;
 }
 
 
 .img-container {
-
     grid-area: img;
     width: 80vw;
     margin: 0 auto 25px;
@@ -48,7 +46,6 @@
 
 img {
     max-width: 130px;
-    /* width: 80%; */
     border-radius: 6px;
     cursor: grab;
 }
