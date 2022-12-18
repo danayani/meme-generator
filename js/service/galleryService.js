@@ -19,7 +19,6 @@ function getImgs() {
             })
         })
         return filteredImgs
-
     } else return gImgs
 }
 
@@ -38,12 +37,13 @@ function onImgSelect(imgSrc) {
     elEditor.classList.remove('close')
 }
 
-function getImgById(imgId){
-
+function getImgById(imgId) {
+    const img = gImgs.find(img => img.id === imgId);
+    return img //{id: 10, src: 'img/21.jpg', keywords: Array(3)}
 }
 
 //to be tested
-function uploadImgToGallery (imgSrc){
+function uploadImgToGallery(imgSrc) {
     var newImg = _createImg(imgSrc, '')
     gImgs.unshift(newImg)
 

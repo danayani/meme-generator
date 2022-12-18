@@ -4,6 +4,8 @@
 function onInitGallery() {
   initMeme() //init editor canvas
   renderGallery()
+
+  getImgById(10)
 }
 
 // var newArray = homes.filter(function (el) {
@@ -35,7 +37,7 @@ function onKeyUpSearch(filterBy) {
 
 //go to upDownloadService
 function onImgInput(ev) {
-  loadImageFromInput(ev, setImgService)
+  loadImageFromInput(ev, setImgFromUser)
 
   var elGallery = document.querySelector('.gallery-container')
   var elEditor = document.querySelector('.editor-container')

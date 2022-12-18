@@ -17,8 +17,8 @@ function setSelectLine(lineIdx){
 
 
 function setImg(imgSrc) {
-    console()
     gImg = imgSrc
+    
 }
 
 function setLineDrag(isDrag) {

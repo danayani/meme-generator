@@ -33,8 +33,6 @@ function addTouchListeners() {
 }
 
 function renderMeme() {
-    // console.log('renderMeme')
-    // resizeCanvas()
     drawImg(gImg) //going after to render lines
 }
 
@@ -46,12 +44,6 @@ function renderLines() {//come after renderMeme (load img)
     })
 }
 
-
-
-
-// function setImg(imgSrc) {
-//     gImg = imgSrc
-// }
 
 function drawImg() {
     const elImg = new Image() // Create a new html img element
