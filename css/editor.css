@@ -43,7 +43,7 @@ canvas {
         'delete    txt   txt   add'
         'colorC     .               fontN     fontP'
         'emoji     emoji      emoji      emoji'
-        'share     share      download   download';
+        'share     save      save   download';
     /* min-height: 100%; */
 
     text-align: center;
@@ -106,6 +106,10 @@ canvas {
     grid-area: download;
 }
 
+.tool-save{
+    grid-area: save;
+} 
+
 .btnAddTxt{
     background-color: rgb(172, 226, 208);
 }
@@ -128,9 +132,10 @@ canvas {
 }
 
 
+
 /* emoji section */
 
-@media (min-width: 780px) {
+@media (min-width: 950px) {
     .editor-container {
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr;

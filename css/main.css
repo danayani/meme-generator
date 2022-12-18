@@ -20,7 +20,6 @@ body {
     font-size: 50px;
     align-self: center;
 
-    
 }
 .about{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
@@ -82,7 +81,7 @@ footer{
 }
 
 
-@media (min-width: 780px) {
+@media (min-width: 950px) {
     .header-nav a {
         margin-right: 10vw;
         font-size: 25px;

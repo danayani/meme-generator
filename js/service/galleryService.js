@@ -3,31 +3,45 @@
 // var gImgs = [{ id: 1, url: 'img/1.jpg', keywords: ['funny', 'cat'] }];
 var gImgs
 var counter = 0
-var gImgsFilter =''
+var gImgsFilter = ''
 
 _createImgs()
 
-function getImg(){
-    return gImgs
+
+function getImgs() {
+    if (gImgsFilter) {
+
+        let filteredImgs = []
+        gImgs.forEach(img => {
+            img.keywords.forEach(key => {
+                if (key.includes(gImgsFilter)) {
+                    if (!filteredImgs.some(filteredImg => filteredImg.id === img.id)) filteredImgs.push(img)
+                }
+            })
+        })
+        return filteredImgs
+
+    } else return gImgs
 }
 
-function getImgsFilter(){
-    return gImgsFilter
-}
 
-function setImgsFilter(searchStr){
+// function getImgsFilter() {
+//     return gImgsFilter
+// }
+
+function setImgsFilter(searchStr) {
     gImgsFilter = searchStr
     // console.log('setImgsFilter')
-    // console.log(gImgsFilter)
+    console.log(gImgsFilter)
 }
 
-function onImgSelect(imgSrc){
+function onImgSelect(imgSrc) {
     setImg(imgSrc)
     renderMeme()
 
     var elGallery = document.querySelector('.gallery-container')
     var elEditor = document.querySelector('.editor-container')
-    
+
     elGallery.classList.add('close')
     elEditor.classList.remove('close')
 }
@@ -42,7 +56,7 @@ function _createImg(src, keywords) {
     return img
 }
 
-function _createImgs(){
+function _createImgs() {
     gImgs = [
         _createImg('img/10.jpeg', ['alice', 'politic']),
         _createImg('img/11.jpg', ['ariel', 'cute']),

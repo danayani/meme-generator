@@ -41,6 +41,9 @@
     flex-wrap: wrap;
     gap: 0.3rem;
 
+    justify-content: center;
+    display: flex;
+
 }
 
 img {
@@ -65,7 +68,7 @@ img {
     align-items: center;
 }
 
-@media (min-width: 780px) {
+@media (min-width: 950px) {
     img {
         max-width: 200px; 
     }
